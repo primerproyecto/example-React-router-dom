@@ -1,15 +1,12 @@
 import "./styles.css";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import NoMatch from "./pages/NothingHere";
+
+import Layout from "./components/Layout";
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -24,39 +21,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-function Layout() {
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </li>
-          <li>
-            <NavLink to="/nothing-here">Nothing Here</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <hr />
-      <Outlet />
-    </div>
-  );
-}
-
-// function NoMatch() {
-//   return (
-//     <div>
-//       <h2>Nothing to see here!</h2>
-//       <p>
-//         <Link to="/">Go to the home page</Link>
-//       </p>
-//     </div>
-//   );
-// }
